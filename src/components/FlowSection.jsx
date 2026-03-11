@@ -30,7 +30,7 @@ const FlowSection = () => {
             <div className="container">
                 <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
                     <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Flujo de seguimiento en tiempo real</h2>
-                    <p style={{ color: '#94a3b8', fontSize: '1.1rem' }}>Desde la denuncia hasta la resolución, cada paso está optimizado.</p>
+                    <p style={{ color: 'var(--color-text-secondary)', fontSize: '1.1rem' }}>Desde la denuncia hasta la resolución, cada paso está optimizado.</p>
                 </div>
 
                 <div style={{ position: 'relative' }}>
@@ -41,7 +41,7 @@ const FlowSection = () => {
                         left: '10%',
                         right: '10%',
                         height: '1px',
-                        background: 'linear-gradient(90deg, #3b82f6 0%, #a78bfa 100%)',
+                        background: 'linear-gradient(90deg, #2563eb 0%, #7c3aed 100%)',
                         zIndex: 0,
                         display: 'block' // Ensure it's visible mostly on desktop
                     }} className="flow-line"></div>
@@ -53,20 +53,20 @@ const FlowSection = () => {
                                 <div style={{
                                     width: '80px',
                                     height: '80px',
-                                    background: '#0f172a',
-                                    border: '1px solid #334155',
+                                    background: '#ffffff',
+                                    border: '1px solid var(--color-border)',
                                     borderRadius: '50%',
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
                                     marginBottom: '1.5rem',
-                                    boxShadow: '0 0 20px rgba(59, 130, 246, 0.1)'
+                                    boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)'
                                 }} className="hover-scale">
-                                    <item.icon size={32} color={idx === 3 ? '#10b981' : idx === 2 ? '#f472b6' : idx === 1 ? '#a78bfa' : '#60a5fa'} />
+                                    <item.icon size={32} color={idx === 3 ? '#10b981' : idx === 2 ? '#db2777' : idx === 1 ? '#7c3aed' : '#2563eb'} />
                                 </div>
 
                                 <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem', fontWeight: 'bold' }}>{item.step}</h3>
-                                <p style={{ color: '#94a3b8', fontSize: '0.95rem', lineHeight: 1.6, maxWidth: '240px' }}>{item.desc}</p>
+                                <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: 1.6, maxWidth: '240px' }}>{item.desc}</p>
                             </div>
                         ))}
                     </div>

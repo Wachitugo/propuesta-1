@@ -42,38 +42,38 @@ const MonitoringSection = () => {
             <div className="container">
                 <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
                     <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', lineHeight: 1.1 }}>Monitoreo en Tiempo Real</h2>
-                    <p style={{ color: '#94a3b8', padding: '0 1rem' }}>Visualiza el estado de la convivencia en tu empresa con nuestros dashboards potenciados por IA.</p>
+                    <p style={{ color: 'var(--color-text-secondary)', padding: '0 1rem' }}>Visualiza el estado de la convivencia en tu empresa con nuestros dashboards potenciados por IA.</p>
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
 
                     {/* Chart 1: Area */}
-                    <div className="card" style={{ padding: '1.5rem', height: '350px', display: 'flex', flexDirection: 'column' }}>
+                    <div className="card" style={{ padding: '1.5rem', height: '350px', display: 'flex', flexDirection: 'column', background: '#ffffff', borderColor: 'var(--color-border)' }}>
                         <h4 style={{ marginBottom: '0.5rem', fontSize: '1rem' }}>Evolución Clima Laboral</h4>
-                        <p style={{ fontSize: '0.8rem', color: '#64748b', marginBottom: '1rem' }}>Puntaje mensual promedio (IA Analysis)</p>
+                        <p style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', marginBottom: '1rem' }}>Puntaje mensual promedio (IA Analysis)</p>
                         <div style={{ flex: 1, width: '100%', minWidth: 0 }}>
                             <ResponsiveContainer width="100%" height="100%">
                                 <AreaChart data={dataArea}>
                                     <defs>
                                         <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="5%" stopColor="#8b5cf6" stopOpacity={0.8} />
-                                            <stop offset="95%" stopColor="#8b5cf6" stopOpacity={0} />
+                                            <stop offset="5%" stopColor="#7c3aed" stopOpacity={0.8} />
+                                            <stop offset="95%" stopColor="#7c3aed" stopOpacity={0} />
                                         </linearGradient>
                                     </defs>
-                                    <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.3} vertical={false} />
-                                    <XAxis dataKey="name" stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} />
-                                    <YAxis stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} />
+                                    <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" opacity={0.5} vertical={false} />
+                                    <XAxis dataKey="name" stroke="var(--color-text-muted)" fontSize={12} tickLine={false} axisLine={false} />
+                                    <YAxis stroke="var(--color-text-muted)" fontSize={12} tickLine={false} axisLine={false} />
                                     <Tooltip content={<CustomTooltip />} />
-                                    <Area type="monotone" dataKey="value" stroke="#8b5cf6" fillOpacity={1} fill="url(#colorValue)" strokeWidth={3} />
+                                    <Area type="monotone" dataKey="value" stroke="#7c3aed" fillOpacity={1} fill="url(#colorValue)" strokeWidth={3} />
                                 </AreaChart>
                             </ResponsiveContainer>
                         </div>
                     </div>
 
                     {/* Chart 2: Donut */}
-                    <div className="card" style={{ padding: '1.5rem', height: '350px', display: 'flex', flexDirection: 'column' }}>
+                    <div className="card" style={{ padding: '1.5rem', height: '350px', display: 'flex', flexDirection: 'column', background: '#ffffff', borderColor: 'var(--color-border)' }}>
                         <h4 style={{ marginBottom: '0.5rem', fontSize: '1rem' }}>Estado de Casos</h4>
-                        <p style={{ fontSize: '0.8rem', color: '#64748b', marginBottom: '1rem' }}>Seguimiento en tiempo real</p>
+                        <p style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', marginBottom: '1rem' }}>Seguimiento en tiempo real</p>
                         <div style={{ flex: 1, position: 'relative', minWidth: 0 }}>
                             <ResponsiveContainer width="100%" height="100%">
                                 <PieChart>
@@ -90,26 +90,26 @@ const MonitoringSection = () => {
                                         ))}
                                     </Pie>
                                     <Tooltip content={<CustomTooltip />} />
-                                    <Legend verticalAlign="bottom" height={36} iconType="circle" wrapperStyle={{ fontSize: '12px', color: '#94a3b8' }} />
+                                    <Legend verticalAlign="bottom" height={36} iconType="circle" wrapperStyle={{ fontSize: '12px', color: 'var(--color-text-secondary)' }} />
                                 </PieChart>
                             </ResponsiveContainer>
                             {/* Center Text */}
                             <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -60%)', textAlign: 'center' }}>
-                                <span style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#fff' }}>85%</span>
+                                <span style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--color-text-primary)' }}>85%</span>
                             </div>
                         </div>
                     </div>
 
                     {/* Chart 3: Bar */}
-                    <div className="card" style={{ padding: '1.5rem', height: '350px', display: 'flex', flexDirection: 'column' }}>
+                    <div className="card" style={{ padding: '1.5rem', height: '350px', display: 'flex', flexDirection: 'column', background: '#ffffff', borderColor: 'var(--color-border)' }}>
                         <h4 style={{ marginBottom: '0.5rem', fontSize: '1rem' }}>Tipología de Alertas</h4>
-                        <p style={{ fontSize: '0.8rem', color: '#64748b', marginBottom: '1rem' }}>Distribución por categoría de riesgo</p>
+                        <p style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', marginBottom: '1rem' }}>Distribución por categoría de riesgo</p>
                         <div style={{ flex: 1, minWidth: 0 }}>
                             <ResponsiveContainer width="100%" height="100%">
                                 <BarChart layout="vertical" data={dataBar} margin={{ top: 5, right: 30, left: 40, bottom: 5 }}>
-                                    <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false} stroke="#334155" opacity={0.3} />
+                                    <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false} stroke="var(--color-border)" opacity={0.5} />
                                     <XAxis type="number" hide />
-                                    <YAxis dataKey="name" type="category" width={80} stroke="#94a3b8" fontSize={10} tickLine={false} axisLine={false} />
+                                    <YAxis dataKey="name" type="category" width={80} stroke="var(--color-text-secondary)" fontSize={10} tickLine={false} axisLine={false} />
                                     <Tooltip cursor={{ fill: 'transparent' }} content={<CustomTooltip />} />
                                     <Bar dataKey="value" fill="#3b82f6" radius={[0, 4, 4, 0]} barSize={20} />
                                 </BarChart>

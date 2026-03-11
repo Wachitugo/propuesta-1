@@ -41,7 +41,7 @@ const BenefitsSection = () => {
                             <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', lineHeight: 1.1 }}>
                                 Beneficios tangibles para tu Empresa
                             </h2>
-                            <p style={{ color: '#94a3b8', fontSize: '1.1rem', marginBottom: '3rem' }}>
+                            <p style={{ color: 'var(--color-text-secondary)', fontSize: '1.1rem', marginBottom: '3rem' }}>
                                 Más que cumplir una ley, construye un entorno donde el talento quiera quedarse.
                             </p>
                         </div>
@@ -66,7 +66,7 @@ const BenefitsSection = () => {
                                         <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.25rem' }}>
                                             {benefit.title}
                                         </h3>
-                                        <p style={{ color: '#94a3b8', lineHeight: 1.5, fontSize: '0.95rem' }}>
+                                        <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.5, fontSize: '0.95rem' }}>
                                             {benefit.description}
                                         </p>
                                     </div>
@@ -85,25 +85,25 @@ const BenefitsSection = () => {
                             transform: 'translate(-50%, -50%)',
                             width: '100%',
                             height: '100%',
-                            background: 'radial-gradient(circle, rgba(139, 61, 255, 0.15) 0%, transparent 70%)',
+                            background: 'radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%)',
                             zIndex: 0,
                             pointerEvents: 'none'
                         }} />
 
                         <div className="card animate-float" style={{
-                            background: 'rgba(18, 24, 38, 0.8)',
+                            background: 'rgba(255, 255, 255, 0.8)',
                             backdropFilter: 'blur(12px)',
-                            border: '1px solid rgba(148, 163, 184, 0.1)',
+                            border: '1px solid var(--color-border)',
                             padding: '3rem 2.5rem',
                             position: 'relative',
                             zIndex: 1,
                             borderRadius: '1.5rem',
-                            boxShadow: '0 20px 40px -10px rgba(0, 0, 0, 0.3)'
+                            boxShadow: '0 20px 40px -10px rgba(0, 0, 0, 0.1)'
                         }}>
                             <p style={{
                                 fontSize: '1.125rem',
                                 fontStyle: 'italic',
-                                color: '#e2e8f0',
+                                color: 'var(--color-text-primary)',
                                 lineHeight: 1.6,
                                 marginBottom: '2rem'
                             }}>
@@ -115,14 +115,14 @@ const BenefitsSection = () => {
                                     width: '48px',
                                     height: '48px',
                                     borderRadius: '50%',
-                                    background: '#475569',
+                                    background: '#cbd5e1',
                                     flexShrink: 0
                                 }} />
                                 <div>
-                                    <h4 style={{ fontSize: '1rem', fontWeight: 'bold', color: '#fff' }}>
+                                    <h4 style={{ fontSize: '1rem', fontWeight: 'bold', color: 'var(--color-text-primary)' }}>
                                         María José González
                                     </h4>
-                                    <p style={{ fontSize: '0.875rem', color: '#94a3b8' }}>
+                                    <p style={{ fontSize: '0.875rem', color: 'var(--color-text-muted)' }}>
                                         Gerente de Personas, TechCorp
                                     </p>
                                 </div>

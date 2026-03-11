@@ -11,33 +11,33 @@ const Header = () => {
             left: 0,
             right: 0,
             zIndex: 50,
-            background: 'rgba(10, 15, 29, 0.95)',
+            background: 'rgba(255, 255, 255, 0.95)',
             backdropFilter: 'blur(10px)',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+            borderBottom: '1px solid var(--color-border)',
             padding: '1rem 0'
         }}>
             <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
 
                 {/* Logo */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#fff', fontWeight: 'bold', fontSize: '1.1rem', zIndex: 60 }}>
-                    <div style={{ background: '#6366f1', padding: '4px', borderRadius: '6px', display: 'flex' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--color-text-primary)', fontWeight: 'bold', fontSize: '1.1rem', zIndex: 60 }}>
+                    <div style={{ background: 'var(--color-primary)', padding: '4px', borderRadius: '6px', display: 'flex' }}>
                         <ShieldCheck size={20} color="white" />
                     </div>
-                    <span>Convivencia <span style={{ color: '#94a3b8' }}>Laboral</span></span>
+                    <span>Convivencia <span style={{ color: 'var(--color-text-muted)' }}>Laboral</span></span>
                 </div>
 
                 {/* Desktop Navigation */}
                 <nav className="nav-links" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
                     {['Ley Karin', 'Solución', 'Cómo Funciona', 'Beneficios'].map((item) => (
                         <a key={item} href={`#${item.toLowerCase().replace(/ /g, '-').replace(/ó/g, 'o')}`} style={{
-                            color: '#cbd5e1',
+                            color: 'var(--color-text-secondary)',
                             textDecoration: 'none',
                             fontSize: '0.9rem',
                             fontWeight: 500,
                             transition: 'color 0.2s'
                         }}
-                            onMouseOver={(e) => e.target.style.color = '#fff'}
-                            onMouseOut={(e) => e.target.style.color = '#cbd5e1'}
+                            onMouseOver={(e) => e.target.style.color = 'var(--color-text-primary)'}
+                            onMouseOut={(e) => e.target.style.color = 'var(--color-text-secondary)'}
                         >
                             {item}
                         </a>
@@ -51,7 +51,7 @@ const Header = () => {
                 <button
                     className="nav-mobile-btn"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer', zIndex: 60 }}
+                    style={{ background: 'none', border: 'none', color: 'var(--color-text-primary)', cursor: 'pointer', zIndex: 60 }}
                 >
                     {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
@@ -63,15 +63,15 @@ const Header = () => {
                         top: '60px',
                         left: 0,
                         right: 0,
-                        background: '#0f172a',
-                        borderBottom: '1px solid #1e293b',
+                        background: 'var(--color-bg-dark)',
+                        borderBottom: '1px solid var(--color-border)',
                         display: 'flex',
                         flexDirection: 'column',
                         padding: '2rem',
                         gap: '1.5rem',
                         alignItems: 'center',
                         zIndex: 50,
-                        boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.5)'
+                        boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
                     }}>
                         {['Ley Karin', 'Solución', 'Cómo Funciona', 'Beneficios'].map((item) => (
                             <a
@@ -79,7 +79,7 @@ const Header = () => {
                                 href={`#${item.toLowerCase().replace(/ /g, '-').replace(/ó/g, 'o')}`}
                                 onClick={() => setIsMenuOpen(false)}
                                 style={{
-                                    color: '#e2e8f0',
+                                    color: 'var(--color-text-primary)',
                                     textDecoration: 'none',
                                     fontSize: '1.1rem',
                                     fontWeight: 500
