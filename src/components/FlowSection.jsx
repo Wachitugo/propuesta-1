@@ -1,85 +1,105 @@
 import React from 'react';
-import { Mail, CheckCircle, Search, Scale, Inbox } from 'lucide-react';
+import { Inbox, CheckCircle, Search, Scale, ArrowRight } from 'lucide-react';
 
 const FlowSection = () => {
     const steps = [
         {
             icon: Inbox,
-            step: "1. Recepción",
-            desc: "Ingreso seguro de denuncias o incidentes mediante canal integrado."
+            step: "Recepción",
+            num: "01",
+            desc: "Ingreso seguro de denuncias o incidentes mediante canal integrado y anónimo.",
+            accent: "#1A71B8"
         },
         {
             icon: CheckCircle,
-            step: "2. Gestión",
-            desc: "La plataforma asigna tareas, recuerda plazos y sugiere medidas de resguardo."
+            step: "Gestión",
+            num: "02",
+            desc: "La plataforma asigna tareas, recuerda plazos y sugiere medidas de resguardo automáticamente.",
+            accent: "#34B6D8"
         },
         {
             icon: Search,
-            step: "3. Investigación",
-            desc: "Registro de evidencias y entrevistas en un entorno digital seguro."
+            step: "Investigación",
+            num: "03",
+            desc: "Registro de evidencias y entrevistas en un entorno digital seguro y confidencial.",
+            accent: "#0A3866"
         },
         {
             icon: Scale,
-            step: "4. Resolución",
-            desc: "Generación de informe final y plan correctivo sugerido por la IA."
+            step: "Resolución",
+            num: "04",
+            desc: "Generación de informe final y plan correctivo sugerido por la IA con respaldo legal.",
+            accent: "#10b981"
         }
     ];
 
     return (
-        <section id="como-funciona" style={{ padding: '6rem 0' }}>
-            <div className="container">
-                <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-                    <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Flujo de seguimiento en tiempo real</h2>
-                    <p style={{ color: 'var(--color-text-secondary)', fontSize: '1.1rem' }}>Desde la denuncia hasta la resolución, cada paso está optimizado.</p>
+        <section id="como-funciona" className="py-24 bg-white relative overflow-hidden">
+            {/* Decorative background */}
+            <div className="absolute top-0 left-0 w-full h-1/2 bg-slate-50 border-b border-slate-100 -z-10"></div>
+
+            <div className="container mx-auto px-6 relative z-10">
+                {/* Header */}
+                <div className="text-center max-w-3xl mx-auto mb-20">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1A71B8]/10 border border-[#1A71B8]/20 rounded-full text-sm font-bold text-[#1A71B8] mb-6 shadow-sm">
+                        <ArrowRight size={16} className="text-[#34B6D8]" />
+                        Proceso Paso a Paso
+                    </div>
+                    <h2 className="text-4xl md:text-5xl font-black mb-6 leading-[1.1] text-[#0A3866] tracking-tight">
+                        Flujo de Seguimiento<br className="hidden sm:block" />
+                        <span className="text-slate-400">en Tiempo Real</span>
+                    </h2>
+                    <p className="text-slate-600 text-lg md:text-xl leading-relaxed px-4 font-medium">
+                        Desde la denuncia hasta la resolución, cada paso está optimizado y respaldado por la plataforma.
+                    </p>
                 </div>
 
-                <div style={{ position: 'relative' }}>
-                    {/* Connecting Line */}
-                    <div style={{
-                        position: 'absolute',
-                        top: '40px',
-                        left: '10%',
-                        right: '10%',
-                        height: '1px',
-                        background: 'linear-gradient(90deg, #2563eb 0%, #7c3aed 100%)',
-                        zIndex: 0,
-                        display: 'block' // Ensure it's visible mostly on desktop
-                    }} className="flow-line"></div>
+                {/* Steps Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
 
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem', position: 'relative', zIndex: 1 }}>
-                        {steps.map((item, idx) => (
-                            <div key={idx} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                                {/* Icon Circle */}
-                                <div style={{
-                                    width: '80px',
-                                    height: '80px',
-                                    background: '#ffffff',
-                                    border: '1px solid var(--color-border)',
-                                    borderRadius: '50%',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    marginBottom: '1.5rem',
-                                    boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)'
-                                }} className="hover-scale">
-                                    <item.icon size={32} color={idx === 3 ? '#10b981' : idx === 2 ? '#db2777' : idx === 1 ? '#7c3aed' : '#2563eb'} />
+                    {/* Connecting line - desktop */}
+                    <div className="absolute top-16 left-[12%] right-[12%] h-px bg-gradient-to-r from-[#1A71B8]/30 via-[#34B6D8]/30 to-[#10b981]/30 z-0 hidden lg:block"></div>
+
+                    {steps.map((item, idx) => (
+                        <div key={idx} className="relative z-10 group">
+                            <div className="bg-white border border-slate-200 rounded-[2rem] p-8 h-full flex flex-col items-center text-center hover:border-[#1A71B8]/40 transition-all duration-300 hover:shadow-[0_20px_40px_rgba(10,56,102,0.06)] hover:-translate-y-1">
+                                
+                                {/* Step Number + Icon */}
+                                <div className="relative mb-6">
+                                    <div 
+                                        className="w-[72px] h-[72px] rounded-2xl flex items-center justify-center transition-colors duration-300 group-hover:scale-105"
+                                        style={{ backgroundColor: `${item.accent}10` }}
+                                    >
+                                        <item.icon size={30} style={{ color: item.accent }} strokeWidth={1.5} />
+                                    </div>
+                                    <span 
+                                        className="absolute -top-2 -right-2 w-7 h-7 rounded-full text-white text-[11px] font-bold flex items-center justify-center shadow-md"
+                                        style={{ backgroundColor: item.accent }}
+                                    >
+                                        {item.num}
+                                    </span>
                                 </div>
 
-                                <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem', fontWeight: 'bold' }}>{item.step}</h3>
-                                <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: 1.6, maxWidth: '240px' }}>{item.desc}</p>
+                                <h3 className="text-xl font-bold mb-3 text-[#0A3866] group-hover:text-[#1A71B8] transition-colors">{item.step}</h3>
+                                <p className="text-slate-600 text-sm leading-relaxed flex-grow">{item.desc}</p>
+                                
+                                {/* Bottom accent bar */}
+                                <div className="mt-6 pt-5 border-t border-slate-100 w-full">
+                                    <div className="w-8 h-1 bg-slate-200 rounded-full mx-auto group-hover:w-16 transition-all duration-500" style={{ '--tw-bg-opacity': 1 }}>
+                                    </div>
+                                </div>
                             </div>
-                        ))}
-                    </div>
+
+                            {/* Arrow connector between cards - desktop */}
+                            {idx < 3 && (
+                                <div className="hidden lg:flex absolute top-1/2 -right-[18px] -translate-y-1/2 z-20 w-8 h-8 bg-white border border-slate-200 rounded-full items-center justify-center shadow-sm">
+                                    <ArrowRight size={14} className="text-[#1A71B8]" />
+                                </div>
+                            )}
+                        </div>
+                    ))}
                 </div>
             </div>
-            {/* Quick responsiveness for the line */}
-            <style>
-                {`
-                @media (max-width: 768px) {
-                    .flow-line { display: none !important; }
-                }
-                `}
-            </style>
         </section>
     );
 };

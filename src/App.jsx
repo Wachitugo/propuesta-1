@@ -15,7 +15,6 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <DashboardPreview />
         <ContextSection />
         <SolutionSection />
         <MonitoringSection />

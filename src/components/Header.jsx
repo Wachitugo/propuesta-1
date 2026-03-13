@@ -1,98 +1,91 @@
 import React, { useState } from 'react';
-import { ShieldCheck, Menu, X } from 'lucide-react';
+import { Menu, X, ChevronRight } from 'lucide-react';
+import logoIcon from '../assets/icon3.png';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+    const navItems = ['Ley Karin', 'Solución', 'Cómo Funciona', 'Beneficios'];
+
     return (
-        <header className="header" style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            zIndex: 50,
-            background: 'rgba(255, 255, 255, 0.95)',
-            backdropFilter: 'blur(10px)',
-            borderBottom: '1px solid var(--color-border)',
-            padding: '1rem 0'
-        }}>
-            <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200 transition-all duration-300">
+            <div className="container mx-auto px-6 max-w-7xl h-20 flex items-center justify-between">
 
-                {/* Logo */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--color-text-primary)', fontWeight: 'bold', fontSize: '1.1rem', zIndex: 60 }}>
-                    <div style={{ background: 'var(--color-primary)', padding: '4px', borderRadius: '6px', display: 'flex' }}>
-                        <ShieldCheck size={20} color="white" />
+                {/* 1. Logo (Izquierda) */}
+                <a href="#" className="flex items-center gap-3 group z-[60]">
+                    {/* Contenedor preparado para tu logo 3D */}
+                    <div className="w-10 h-10 flex items-center justify-center transition-transform group-hover:scale-105">
+                        <img 
+                            src={logoIcon} 
+                            alt="Logo Convivencia Laboral" 
+                            className="w-full h-full object-contain"
+                        />
                     </div>
-                    <span>Convivencia <span style={{ color: 'var(--color-text-muted)' }}>Laboral</span></span>
-                </div>
+                    <span className="font-bold text-xl tracking-tight text-[#0A3866]">
+                        Convivencia<span className="text-[#34B6D8]">Laboral</span>
+                    </span>
+                </a>
 
-                {/* Desktop Navigation */}
-                <nav className="nav-links" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-                    {['Ley Karin', 'Solución', 'Cómo Funciona', 'Beneficios'].map((item) => (
-                        <a key={item} href={`#${item.toLowerCase().replace(/ /g, '-').replace(/ó/g, 'o')}`} style={{
-                            color: 'var(--color-text-secondary)',
-                            textDecoration: 'none',
-                            fontSize: '0.9rem',
-                            fontWeight: 500,
-                            transition: 'color 0.2s'
-                        }}
-                            onMouseOver={(e) => e.target.style.color = 'var(--color-text-primary)'}
-                            onMouseOut={(e) => e.target.style.color = 'var(--color-text-secondary)'}
+                {/* 2. Navegación Desktop (Centro) */}
+                <nav className="hidden md:flex items-center gap-1">
+                    {navItems.map((item) => (
+                        <a 
+                            key={item} 
+                            href={`#${item.toLowerCase().replace(/ /g, '-').replace(/ó/g, 'o')}`} 
+                            className="px-4 py-2 text-sm font-semibold text-slate-500 hover:text-[#0A3866] hover:bg-slate-50 rounded-full transition-all"
                         >
                             {item}
                         </a>
                     ))}
-                    <button className="btn btn-primary" style={{ padding: '0.6rem 1.2rem', fontSize: '0.9rem' }}>
-                        Solicitar Demo
-                    </button>
                 </nav>
 
-                {/* Mobile Menu Button */}
+                {/* 3. Acciones Desktop (Derecha) */}
+                <div className="hidden md:flex items-center gap-4">
+                   
+                    <button className="bg-[#0A3866] hover:bg-[#1A71B8] text-white px-6 py-2.5 rounded-full font-semibold text-sm transition-all shadow-sm hover:shadow-md active:scale-95">
+                        Solicitar Demo
+                    </button>
+                </div>
+
+                {/* Botón Menú Móvil */}
                 <button
-                    className="nav-mobile-btn"
+                    className="md:hidden text-slate-600 hover:bg-slate-100 p-2 rounded-lg z-[60] transition-colors"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    style={{ background: 'none', border: 'none', color: 'var(--color-text-primary)', cursor: 'pointer', zIndex: 60 }}
+                    aria-label="Toggle menu"
                 >
                     {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
 
-                {/* Mobile Navigation Dropdown */}
-                {isMenuOpen && (
-                    <div style={{
-                        position: 'absolute',
-                        top: '60px',
-                        left: 0,
-                        right: 0,
-                        background: 'var(--color-bg-dark)',
-                        borderBottom: '1px solid var(--color-border)',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        padding: '2rem',
-                        gap: '1.5rem',
-                        alignItems: 'center',
-                        zIndex: 50,
-                        boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
-                    }}>
-                        {['Ley Karin', 'Solución', 'Cómo Funciona', 'Beneficios'].map((item) => (
-                            <a
-                                key={item}
-                                href={`#${item.toLowerCase().replace(/ /g, '-').replace(/ó/g, 'o')}`}
-                                onClick={() => setIsMenuOpen(false)}
-                                style={{
-                                    color: 'var(--color-text-primary)',
-                                    textDecoration: 'none',
-                                    fontSize: '1.1rem',
-                                    fontWeight: 500
-                                }}
-                            >
-                                {item}
-                            </a>
-                        ))}
-                        <button className="btn btn-primary" style={{ width: '100%', maxWidth: '200px' }}>
+            </div>
+
+            {/* Navegación Móvil (Desplegable animado) */}
+            <div 
+                className={`absolute top-20 left-0 right-0 bg-white border-b border-slate-200 shadow-xl md:hidden transition-all duration-300 origin-top ${
+                    isMenuOpen ? 'opacity-100 scale-y-100 visible' : 'opacity-0 scale-y-0 invisible'
+                }`}
+            >
+                <div className="flex flex-col p-6 gap-2">
+                    {navItems.map((item) => (
+                        <a
+                            key={item}
+                            href={`#${item.toLowerCase().replace(/ /g, '-').replace(/ó/g, 'o')}`}
+                            onClick={() => setIsMenuOpen(false)}
+                            className="flex items-center justify-between text-[#0A3866] text-lg font-bold py-3 px-4 rounded-xl hover:bg-slate-50 transition-colors"
+                        >
+                            {item}
+                            <ChevronRight size={20} className="text-slate-400" />
+                        </a>
+                    ))}
+                    
+                    <div className="h-px bg-slate-100 my-4"></div>
+                    
+                    <div className="flex flex-col gap-3 px-2">
+                      
+                        <button className="w-full bg-[#0A3866] hover:bg-[#1A71B8] text-white py-3 rounded-xl font-bold transition-colors shadow-sm">
                             Solicitar Demo
                         </button>
                     </div>
-                )}
+                </div>
             </div>
         </header>
     );

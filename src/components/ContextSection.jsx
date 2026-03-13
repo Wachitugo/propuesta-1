@@ -1,62 +1,107 @@
 import React from 'react';
-import { AlertTriangle, Clock, Gavel, AlertCircle } from 'lucide-react';
+import { AlertCircle, TrendingDown, Users, FileStack, ShieldAlert } from 'lucide-react';
 
 const ContextSection = () => {
     return (
-        <section className="context-section" id="ley-karin" style={{ padding: '5rem 0' }}>
-            <div className="container">
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+        <section id="ley-karin" className="relative py-24 bg-slate-50 text-slate-900 border-t border-slate-200 overflow-hidden">
+            <div className="container mx-auto px-6 relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                    
+                    {/* IZQUIERDA: Tarjetas (Bento Grid) Premium */}
+                    <div className="order-last lg:order-first grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6 relative">
 
-                    {/* Left Content */}
-                    <div>
-                        <div className="section-tag" style={{ color: '#ef4444', borderColor: '#fee2e2', background: '#fef2f2' }}>
-                            <AlertTriangle size={14} /> CONTEXTO CRÍTICO
+                        {/* Tarjeta 1: Riesgo Financiero (Ocupa 2 columnas) */}
+                        <div className="sm:col-span-2 bg-[#0A3866] text-white p-8 md:p-10 rounded-[2rem] relative overflow-hidden group shadow-lg transition-transform duration-500 hover:-translate-y-1">
+                            
+                            {/* Detalle corporativo de fondo */}
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-[#1A71B8]/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+                            
+                            <div className="relative z-10 flex flex-col gap-5">
+                                {/* Ícono y Título alineados */}
+                                <div className="flex items-center gap-4">
+                                    <div className="w-14 h-14 bg-red-500/10 rounded-2xl flex items-center justify-center text-red-400 border border-red-500/20 shrink-0">
+                                        <TrendingDown size={28} strokeWidth={2.5} />
+                                    </div>
+                                    <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight text-white drop-shadow-sm">Riesgo Financiero Máximo</h3>
+                                </div>
+                                
+                                <p className="text-blue-50 text-base md:text-lg leading-relaxed max-w-xl">
+                                    Multas significativas impuestas por la Dirección del Trabajo por <span className="font-semibold">no contar con canales de denuncia activos, seguros y protocolos actualizados</span> al momento de una fiscalización.
+                                </p>
+                            </div>
                         </div>
-                        <h2 style={{ marginBottom: '1.5rem', fontSize: '2.5rem' }}>
-                            ¿Tu empresa está preparada para la <span style={{ color: 'var(--color-primary)' }}>Ley 21.643</span>?
+
+                        {/* Tarjeta 2: Reputación */}
+                        <div className="bg-white border border-slate-200 p-7 md:p-8 rounded-[2rem] flex flex-col justify-start hover:border-[#34B6D8]/40 transition-all duration-300 shadow-sm hover:shadow-md group">
+                            <div className="flex flex-col gap-4">
+                                <div className="flex items-center gap-4">
+                                    <div className="w-12 h-12 bg-slate-50 border border-slate-100 rounded-xl flex items-center justify-center text-[#1A71B8] shrink-0 group-hover:bg-[#1A71B8] group-hover:text-white transition-colors duration-300">
+                                        <Users size={24} strokeWidth={2} />
+                                    </div>
+                                    <h3 className="text-xl font-bold text-[#0A3866] leading-tight">Daño Reputacional</h3>
+                                </div>
+                                <p className="text-slate-600 text-sm md:text-base leading-relaxed">
+                                    Pérdida de talento clave y clima laboral tóxico derivado de una gestión parcial, insegura o poco transparente de las denuncias recibidas.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Tarjeta 3: Tiempos */}
+                        <div className="bg-white border border-slate-200 p-7 md:p-8 rounded-[2rem] flex flex-col justify-start hover:border-[#1A71B8]/40 transition-all duration-300 shadow-sm hover:shadow-md group">
+                            <div className="flex flex-col gap-4">
+                                <div className="flex items-center gap-4">
+                                    <div className="w-12 h-12 bg-slate-50 border border-slate-100 rounded-xl flex items-center justify-center text-[#1A71B8] shrink-0 group-hover:bg-[#1A71B8] group-hover:text-white transition-colors duration-300">
+                                        <AlertCircle size={24} strokeWidth={2} />
+                                    </div>
+                                    <h3 className="text-xl font-bold text-[#0A3866] leading-tight">Tiempos Críticos</h3>
+                                </div>
+                                <p className="text-slate-600 text-sm md:text-base leading-relaxed">
+                                    Plazos legales y de investigación estrictos e impostergables. Continuar usando hojas de cálculo garantiza ineficiencias y retrasos fatales.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* DERECHA: Contenido de Texto */}
+                    <div className="order-first lg:order-last flex flex-col justify-center">
+                        
+                        {/* Etiqueta Superior Corporativa */}
+                        <div className="inline-flex items-center gap-3 mb-8 bg-red-50 text-red-600 border border-red-100 px-4 py-2 rounded-full w-fit max-w-full">
+                            <div className="relative flex h-2 w-2 shrink-0">
+                                <span className="absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
+                            </div>
+                            <span className="text-sm font-bold tracking-wide uppercase truncate">
+                                Contexto Legal Vigente
+                            </span>
+                        </div>
+                        
+                        <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black tracking-tight text-[#0A3866] leading-[1.05] mb-6">
+                            La Ley 21.643 <br />
+                            <span className="text-slate-500 font-bold block mt-2">no es opcional.</span>
                         </h2>
-                        <p style={{ color: 'var(--color-text-secondary)', fontSize: '1.1rem', marginBottom: '2rem', lineHeight: 1.6 }}>
-                            La nueva normativa de prevención del acoso laboral, sexual y violencia en el trabajo exige protocolos estrictos, plazos definidos y una investigación imparcial. Un error en el proceso puede costar caro en multas y reputación.
+                        
+                        <p className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed mb-10">
+                            La nueva normativa exige protocolos <strong className="text-slate-800">estrictos, confidenciales e imparciales</strong> para la prevención y sanción del acoso en el trabajo. Un error en un proceso manual no solo levanta alertas legales, destruye por completo la confianza de tu equipo corporativo.
                         </p>
 
-                        <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                            {[
-                                { icon: Clock, text: "Plazos legales estrictos e impostergables" },
-                                { icon: Gavel, text: "Exigencia de imparcialidad comprobable" },
-                                { icon: AlertCircle, text: "Multas elevadas por incumplimiento" }
-                            ].map((item, idx) => (
-                                <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: 'var(--color-text-primary)' }}>
-                                    <div style={{ padding: '8px', background: 'rgba(124, 58, 237, 0.1)', borderRadius: '8px', color: 'var(--color-primary)', flexShrink: 0 }}>
-                                        <item.icon size={20} />
-                                    </div>
-                                    <span style={{ fontSize: '1.05rem' }}>{item.text}</span>
-                                </li>
-                            ))}
-                        </ul>
+                        {/* Caja de Beneficio / Highlighting */}
+                        <div className="relative group">
+                            <div className="relative flex items-start sm:items-center gap-5 p-6 rounded-2xl bg-white border border-slate-200 shadow-sm transition-shadow duration-300 hover:shadow-md">
+                                <div className="bg-slate-50 p-3.5 rounded-xl shrink-0 border border-slate-100 group-hover:bg-[#1A71B8] transition-colors duration-300">
+                                    <FileStack className="text-[#1A71B8] group-hover:text-white transition-colors duration-300" size={28} strokeWidth={1.5} />
+                                </div>
+                                <div>
+                                    <h4 className="text-[1.15rem] font-bold text-[#0A3866] mb-1.5 leading-tight">Evite el colapso administrativo</h4>
+                                    <p className="text-slate-500 text-sm leading-relaxed">
+                                        Automatice de inmediato las actas, seguimientos, notificaciones y reportes exigidos por la Dirección del Trabajo. <span className="text-slate-700 font-medium">Libere a su equipo de RRHH de la burocracia</span> para que se enfoquen al 100% en la contención humana.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
 
-                    {/* Right Cards */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', maxWidth: '100%' }}>
-
-                        <div className="card" style={{ background: 'linear-gradient(90deg, #fff1f2 0%, #ffffff 100%)', borderLeft: '4px solid #ef4444', padding: '1.5rem', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
-                            <h4 style={{ color: 'var(--color-text-primary)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                <div style={{ width: '8px', height: '8px', background: '#ef4444', borderRadius: '50%' }}></div>
-                                Riesgo de Multas
-                            </h4>
-                            <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem' }}>Sanciones financieras significativas por no contar con protocolos activos.</p>
-                        </div>
-
-                        <div className="card" style={{ background: 'linear-gradient(90deg, #fff7ed 0%, #ffffff 100%)', borderLeft: '4px solid #f97316', padding: '1.5rem', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
-                            <h4 style={{ color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>Daño Reputacional</h4>
-                            <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem' }}>Pérdida de talento y confianza de los empleados por mala gestión de denuncias.</p>
-                        </div>
-
-                        <div className="card" style={{ background: '#f8fafc', borderLeft: '4px solid #64748b', padding: '1.5rem', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
-                            <h4 style={{ color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>Carga Administrativa</h4>
-                            <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem' }}>Horas perdidas en redacción manual de informes y seguimiento de plazos.</p>
-                        </div>
-
-                    </div>
                 </div>
             </div>
         </section>
