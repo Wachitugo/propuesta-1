@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Menu, X, ChevronRight } from 'lucide-react';
 import logoIcon from '../assets/icon3.png';
 
-const Header = () => {
+const Header = ({ onOpenModal }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const navItems = ['Ley Karin', 'Solución', 'Cómo Funciona', 'Beneficios'];
+    const navItems = ['Ley Karin', 'Solución', 'Monitoreo', 'Cómo Funciona', 'Beneficios'];
 
     return (
         <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200 transition-all duration-300">
@@ -42,7 +42,7 @@ const Header = () => {
                 {/* 3. Acciones Desktop (Derecha) */}
                 <div className="hidden md:flex items-center gap-4">
                    
-                    <button className="bg-[#0A3866] hover:bg-[#1A71B8] text-white px-6 py-2.5 rounded-full font-semibold text-sm transition-all shadow-sm hover:shadow-md active:scale-95">
+                    <button onClick={onOpenModal} className="bg-[#0A3866] hover:bg-[#1A71B8] text-white px-6 py-2.5 rounded-full font-semibold text-sm transition-all shadow-sm hover:shadow-md active:scale-95">
                         Solicitar Demo
                     </button>
                 </div>
@@ -81,7 +81,7 @@ const Header = () => {
                     
                     <div className="flex flex-col gap-3 px-2">
                       
-                        <button className="w-full bg-[#0A3866] hover:bg-[#1A71B8] text-white py-3 rounded-xl font-bold transition-colors shadow-sm">
+                        <button onClick={onOpenModal} className="w-full bg-[#0A3866] hover:bg-[#1A71B8] text-white py-3 rounded-xl font-bold transition-colors shadow-sm">
                             Solicitar Demo
                         </button>
                     </div>

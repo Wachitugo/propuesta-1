@@ -2,7 +2,7 @@ import React from 'react';
 import { Linkedin, Mail, ArrowRight, MapPin, Phone } from 'lucide-react';
 import logoIcon from '../assets/icon3.png';
 
-const Footer = () => {
+const Footer = ({ onOpenModal }) => {
     const footerLinks = {
         producto: [
             { label: 'Características', href: '#solucion' },
@@ -35,7 +35,7 @@ const Footer = () => {
                                 Agenda una demo personalizada y descubre cómo proteger a tu equipo.
                             </p>
                         </div>
-                        <button className="group bg-white hover:bg-slate-50 text-[#0A3866] px-8 py-3.5 rounded-full font-bold text-base transition-all duration-300 shadow-lg hover:shadow-white/20 hover:-translate-y-1 inline-flex items-center gap-2 shrink-0">
+                        <button onClick={onOpenModal} className="group bg-white hover:bg-slate-50 text-[#0A3866] px-8 py-3.5 rounded-full font-bold text-base transition-all duration-300 shadow-lg hover:shadow-white/20 hover:-translate-y-1 inline-flex items-center gap-2 shrink-0">
                             Solicitar Demo
                             <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
                         </button>
@@ -106,11 +106,11 @@ const Footer = () => {
                             </li>
                             <li className="flex items-start gap-3">
                                 <Mail size={16} className="text-[#34B6D8] mt-0.5 shrink-0" />
-                                <span className="text-white/70 text-sm">contacto@convivencialaboral.cl</span>
+                                <span className="text-white/70 text-sm">contacto@convivencialaboral.com</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <Phone size={16} className="text-[#34B6D8] mt-0.5 shrink-0" />
-                                <span className="text-white/70 text-sm">+56 9 1234 5678</span>
+                                <span className="text-white/70 text-sm">+56 9 8761 8340</span>
                             </li>
                         </ul>
                     </div>

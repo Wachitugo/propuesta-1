@@ -1,6 +1,12 @@
 @import "tailwindcss";
 
 @theme {
+  --animate-first: moveVertical 30s ease infinite;
+  --animate-second: moveInCircle 20s reverse infinite;
+  --animate-third: moveInCircle 40s linear infinite;
+  --animate-fourth: moveHorizontal 40s ease infinite;
+  --animate-fifth: moveInCircle 20s ease infinite;
+
   --color-bg-dark: #ffffff;
   --color-surface: #f8fafc;
   --color-primary: #7c3aed;
@@ -110,4 +116,87 @@
     pointer-events: none;
     z-index: 0;
   }
+}
+
+/* ----------------------------------
+   Scroll Entrance Animations
+---------------------------------- */
+[data-animate] {
+  opacity: 0;
+  filter: blur(8px);
+  will-change: opacity, transform, filter;
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-animate="slide-up"] {
+  transform: translateY(60px) scale(0.97);
+}
+[data-animate="slide-up"].in-view {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0) scale(1);
+}
+
+[data-animate="fade-in"] {
+  transform: translateY(0);
+}
+[data-animate="fade-in"].in-view {
+  opacity: 1;
+  filter: blur(0);
+}
+
+[data-animate="slide-right"] {
+  transform: translateX(-50px) scale(0.97);
+}
+[data-animate="slide-right"].in-view {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0) scale(1);
+}
+
+[data-animate="slide-left"] {
+  transform: translateX(50px) scale(0.97);
+}
+[data-animate="slide-left"].in-view {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0) scale(1);
+}
+
+[data-animate="scale-up"] {
+  transform: scale(0.92) translateY(40px);
+}
+[data-animate="scale-up"].in-view {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1) translateY(0);
+}
+
+.delay-100 { transition-delay: 100ms !important; }
+.delay-200 { transition-delay: 200ms !important; }
+.delay-300 { transition-delay: 300ms !important; }
+.delay-400 { transition-delay: 400ms !important; }
+.delay-500 { transition-delay: 500ms !important; }
+
+/* ----------------------------------
+   BackgroundGradientAnimation Keyframes
+---------------------------------- */
+@keyframes moveInCircle {
+  0%   { transform: rotate(0deg); }
+  50%  { transform: rotate(180deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes moveVertical {
+  0%   { transform: translateY(-50%); }
+  50%  { transform: translateY(50%); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes moveHorizontal {
+  0%   { transform: translateX(-50%) translateY(-10%); }
+  50%  { transform: translateX(50%) translateY(10%); }
+  100% { transform: translateX(-50%) translateY(-10%); }
 }

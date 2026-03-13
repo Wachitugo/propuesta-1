@@ -34,35 +34,35 @@ const FlowSection = () => {
     ];
 
     return (
-        <section id="como-funciona" className="py-24 bg-white relative overflow-hidden">
+        <section id="como-funciona" className="py-14 sm:py-20 lg:py-24 bg-white relative overflow-hidden">
             {/* Decorative background */}
             <div className="absolute top-0 left-0 w-full h-1/2 bg-slate-50 border-b border-slate-100 -z-10"></div>
 
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container mx-auto px-4 sm:px-6 relative z-10">
                 {/* Header */}
-                <div className="text-center max-w-3xl mx-auto mb-20">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1A71B8]/10 border border-[#1A71B8]/20 rounded-full text-sm font-bold text-[#1A71B8] mb-6 shadow-sm">
+                <div data-animate="slide-up" className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 lg:mb-20">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1A71B8]/10 border border-[#1A71B8]/20 rounded-full text-xs sm:text-sm font-bold text-[#1A71B8] mb-5 sm:mb-6 shadow-sm">
                         <ArrowRight size={16} className="text-[#34B6D8]" />
                         Proceso Paso a Paso
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-black mb-6 leading-[1.1] text-[#0A3866] tracking-tight">
-                        Flujo de Seguimiento<br className="hidden sm:block" />
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 sm:mb-6 leading-[1.1] text-[#0A3866] tracking-tight">
+                        Flujo de Seguimiento{' '}<br className="hidden sm:block" />
                         <span className="text-slate-400">en Tiempo Real</span>
                     </h2>
-                    <p className="text-slate-600 text-lg md:text-xl leading-relaxed px-4 font-medium">
+                    <p className="text-slate-600 text-base sm:text-lg md:text-xl leading-relaxed px-2 sm:px-4 font-medium">
                         Desde la denuncia hasta la resolución, cada paso está optimizado y respaldado por la plataforma.
                     </p>
                 </div>
 
                 {/* Steps Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 relative">
 
                     {/* Connecting line - desktop */}
                     <div className="absolute top-16 left-[12%] right-[12%] h-px bg-gradient-to-r from-[#1A71B8]/30 via-[#34B6D8]/30 to-[#10b981]/30 z-0 hidden lg:block"></div>
 
                     {steps.map((item, idx) => (
-                        <div key={idx} className="relative z-10 group">
-                            <div className="bg-white border border-slate-200 rounded-[2rem] p-8 h-full flex flex-col items-center text-center hover:border-[#1A71B8]/40 transition-all duration-300 hover:shadow-[0_20px_40px_rgba(10,56,102,0.06)] hover:-translate-y-1">
+                        <div key={idx} data-animate="slide-up" className={`delay-${(idx + 1) * 100} relative z-10 group`}>
+                            <div className="bg-white border border-slate-200 rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-8 h-full flex flex-col items-center text-center hover:border-[#1A71B8]/40 transition-all duration-300 hover:shadow-[0_20px_40px_rgba(10,56,102,0.06)] hover:-translate-y-1">
                                 
                                 {/* Step Number + Icon */}
                                 <div className="relative mb-6">
