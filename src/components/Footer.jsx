@@ -106,7 +106,7 @@ const Footer = ({ onOpenModal }) => {
                             </li>
                             <li className="flex items-start gap-3">
                                 <Mail size={16} className="text-[#34B6D8] mt-0.5 shrink-0" />
-                                <span className="text-white/70 text-sm">contacto@convivencialaboral.com</span>
+                                <span className="text-white/70 text-sm">info@convivencialaboral.com</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <Phone size={16} className="text-[#34B6D8] mt-0.5 shrink-0" />

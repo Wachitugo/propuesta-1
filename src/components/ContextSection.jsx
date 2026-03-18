@@ -94,7 +94,7 @@ const ContextSection = () => {
                                 <div>
                                     <h4 className="text-[1.15rem] font-bold text-[#0A3866] mb-1.5 leading-tight">Evite el colapso administrativo</h4>
                                     <p className="text-slate-500 text-sm leading-relaxed">
-                                        Automatice de inmediato las actas, seguimientos, notificaciones y reportes exigidos por la Dirección del Trabajo. <span className="text-slate-700 font-medium">Libere a su equipo de RRHH de la burocracia</span> para que se enfoquen al 100% en la contención humana.
+                                        Automatice de inmediato las actas, seguimientos, notificaciones y reportes exigidos por la Dirección del Trabajo. <span className="text-slate-700 font-medium">Libere a su equipo de Relaciones Laborales de la burocracia</span> para que se enfoquen al 100% en la contención humana.
                                     </p>
                                 </div>
                             </div>

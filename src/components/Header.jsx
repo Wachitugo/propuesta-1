@@ -22,7 +22,7 @@ const Header = ({ onOpenModal }) => {
                         />
                     </div>
                     <span className="font-bold text-xl tracking-tight text-[#0A3866]">
-                        Convivencia<span className="text-[#34B6D8]">Laboral</span>
+                        Convivencia <span className="text-[#34B6D8]">Laboral</span>
                     </span>
                 </a>
 

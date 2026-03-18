@@ -35,7 +35,7 @@ const BenefitsSection = () => {
             <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#34B6D8]/5 rounded-full blur-[120px] translate-y-1/3 translate-x-1/4 pointer-events-none"></div>
 
             <div className="container mx-auto px-4 sm:px-6 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-14 lg:gap-16 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-1 gap-10 sm:gap-14 lg:gap-16 items-center">
 
                     {/* Left Column: Title & Benefit Cards */}
                     <div>
@@ -92,41 +92,7 @@ const BenefitsSection = () => {
                         </div>
                     </div>
 
-                    {/* Right Column: Testimonial Card */}
-                    <div data-animate="slide-left" style={{ transitionDelay: '200ms' }} className="relative h-full flex flex-col justify-center">
-                        {/* Subtle glow */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-[radial-gradient(circle,rgba(26,113,184,0.05)_0%,transparent_70%)] z-0 pointer-events-none"></div>
-                        
-                        <div className="bg-white border border-slate-200 p-8 sm:p-10 md:p-12 relative z-10 rounded-[1.5rem] sm:rounded-[2rem] shadow-[0_20px_50px_rgba(10,56,102,0.04)] hover:shadow-[0_30px_60px_rgba(10,56,102,0.08)] transition-all duration-500">
-                            {/* Quote Icon */}
-                            <div className="w-12 h-12 rounded-xl bg-[#1A71B8]/10 flex items-center justify-center mb-8">
-                                <Quote size={22} className="text-[#1A71B8]" />
-                            </div>
-                            
-                            <p className="text-xl sm:text-2xl text-[#0A3866] leading-relaxed mb-10 font-medium italic">
-                                "Desde que implementamos la plataforma, los tiempos de gestión de denuncias bajaron drásticamente y nuestro equipo se siente respaldado legalmente en cada paso."
-                            </p>
-
-                            <div className="flex items-center gap-4 pt-6 border-t border-slate-100">
-                                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#1A71B8] to-[#34B6D8] flex items-center justify-center text-white font-bold text-lg shrink-0 shadow-sm">
-                                    MJ
-                                </div>
-                                <div>
-                                    <h4 className="text-base font-bold text-[#0A3866]">
-                                        María José González
-                                    </h4>
-                                    <p className="text-sm text-slate-500 font-medium">
-                                        Gerente de Personas, TechCorp
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Decorative corner accent */}
-                            <div className="absolute top-0 right-0 w-24 h-24 overflow-hidden rounded-tr-[2rem] pointer-events-none">
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#34B6D8]/10 to-transparent rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                            </div>
-                        </div>
-                    </div>
+              
                     
                 </div>
             </div>
